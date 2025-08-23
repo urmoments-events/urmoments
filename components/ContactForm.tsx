@@ -3,8 +3,6 @@ import { useState } from "react";
 
 type Placeholders = Partial<Record<"fullName"|"email"|"postcode"|"description", string>>;
 
-type EnvWindow = Window & { __ENV__?: { NEXT_PUBLIC_FORMSPREE_ACTION_URL?: string } };
-
 export default function ContactForm({
   action,
   consentText = "I agree to be contacted about my enquiry.",
@@ -17,8 +15,7 @@ export default function ContactForm({
   page?: "home" | "services";
 }) {
   const [status, setStatus] = useState<string>("");
-  const envAction = (typeof window !== "undefined" ? (window as EnvWindow).__ENV__?.NEXT_PUBLIC_FORMSPREE_ACTION_URL : undefined);
-  const effectiveAction = envAction || action || "";
+  const effectiveAction = (process.env.NEXT_PUBLIC_FORMSPREE_ACTION_URL as string | undefined) || action || "";
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     const form = e.currentTarget;

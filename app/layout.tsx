@@ -41,8 +41,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Load injected public env for client-side consumption */}
-        <Script src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/env.js`} strategy="beforeInteractive" />
         {/* JSON-LD LocalBusiness */}
         {(() => {
           const cfg = loadConfig();
