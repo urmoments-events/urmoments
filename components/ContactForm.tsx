@@ -46,7 +46,7 @@ export default function ContactForm({
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl md:text-3xl font-semibold">Get a fast quote</h2>
         <p className="mt-1 text-slate-600">Tell us a few details and we’ll get back within 24 hours.</p>
-        <form onSubmit={onSubmit} className="mt-6 grid grid-cols-1 gap-4">
+        <form onSubmit={onSubmit} className="mt-6 grid grid-cols-1 gap-4" noValidate>
           <div>
             <label htmlFor="fullName" className="block text-sm font-medium text-slate-700">Full Name</label>
             <input id="fullName" name="fullName" type="text" required placeholder={placeholders.fullName}
@@ -54,12 +54,12 @@ export default function ContactForm({
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email</label>
-            <input id="email" name="email" type="email" required placeholder={placeholders.email}
+            <input id="email" name="email" type="email" autoComplete="email" inputMode="email" required placeholder={placeholders.email}
               className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>
             <label htmlFor="postcode" className="block text-sm font-medium text-slate-700">Postcode</label>
-            <input id="postcode" name="postcode" type="text" required placeholder={placeholders.postcode}
+            <input id="postcode" name="postcode" type="text" autoComplete="postal-code" required placeholder={placeholders.postcode}
               className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>

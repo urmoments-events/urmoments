@@ -2,9 +2,10 @@ import { loadConfig } from "@/lib/config";
 import ServicesGrid from "@/components/ServicesGrid";
 import AddOnsChips from "@/components/AddOnsChips";
 import ContactForm from "@/components/ContactForm";
+import FloatingCta from "@/components/FloatingCta";
 
 export default function SiteServices() {
-  const { addOns, contactForm } = loadConfig();
+  const { addOns, contactForm, phone, socialLinks } = loadConfig();
   return (
     <main>
       <ServicesGrid />
@@ -16,6 +17,7 @@ export default function SiteServices() {
         </div>
       </section>
       <ContactForm action={contactForm?.action} consentText={contactForm?.consentText} placeholders={contactForm?.placeholders} page="services" />
+      <FloatingCta phone={phone} instagram={socialLinks?.instagram} />
     </main>
   );
 }

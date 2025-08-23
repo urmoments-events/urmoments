@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import BackToTop from "@/components/BackToTop";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -48,6 +49,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           © {new Date().getFullYear()} UrMoments. All rights reserved.
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

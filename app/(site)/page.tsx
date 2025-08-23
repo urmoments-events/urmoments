@@ -5,9 +5,10 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import { loadConfig } from "@/lib/config";
 import ContactForm from "@/components/ContactForm";
+import FloatingCta from "@/components/FloatingCta";
 
 export default function SiteHome() {
-  const { heroImages, testimonials } = loadConfig();
+  const { heroImages, testimonials, phone, socialLinks } = loadConfig();
   return (
     <main>
       <HeroBanner />
@@ -16,6 +17,7 @@ export default function SiteHome() {
       <Testimonials items={testimonials ?? []} />
       <FAQ />
       <ContactForm action={loadConfig().contactForm?.action} consentText={loadConfig().contactForm?.consentText} placeholders={loadConfig().contactForm?.placeholders} page="home" />
+      <FloatingCta phone={phone} instagram={socialLinks?.instagram} />
     </main>
   );
 }

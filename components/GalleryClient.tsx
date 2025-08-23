@@ -24,8 +24,8 @@ export default function GalleryClient({ images }: { images: string[] }) {
                 onClick={() => { setSrc(toPublicSrc(img)); setAlt(`Decor sample ${i+1}`); setOpen(true); }}
                 aria-expanded={open}
               >
-                <span className="relative block w-full aspect-[4/3]">
-                  <Image src={toPublicSrc(img)} alt={`Decor sample ${i+1}`} fill unoptimized sizes="(max-width: 768px) 50vw, 33vw" className="rounded-lg object-cover shadow-sm ring-1 ring-slate-200 group-hover:opacity-95" />
+                <span className="relative block w-full aspect-[4/3] overflow-hidden">
+                  <Image src={toPublicSrc(img)} alt={`Decor sample ${i+1}`} fill unoptimized sizes="(max-width: 768px) 50vw, 33vw" className="rounded-lg object-cover shadow-sm ring-1 ring-slate-200 group-hover:opacity-95 transition duration-200 ease-out will-change-transform" onLoadingComplete={(imgEl) => { imgEl.style.filter = 'none'; }} style={{ filter: 'blur(12px)' }} />
                 </span>
               </button>
             </li>

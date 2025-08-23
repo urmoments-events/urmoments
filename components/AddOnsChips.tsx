@@ -21,7 +21,7 @@ export default function AddOnsChips({ addOns }: { addOns: AddOn[] }) {
         <button
           key={label}
           type="button"
-          className="select-none inline-flex items-center gap-1 px-3 py-2 rounded-full ring-1 ring-slate-200 bg-slate-50 text-slate-700 text-sm hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+          className="select-none inline-flex items-center gap-2 px-4 py-3 rounded-full ring-1 ring-slate-200 bg-slate-50 text-slate-700 text-sm md:text-base hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 active:scale-[0.98] transition"
           aria-pressed={false}
           onClick={(e) => {
             const btn = e.currentTarget;
@@ -32,7 +32,7 @@ export default function AddOnsChips({ addOns }: { addOns: AddOn[] }) {
             onToggle();
           }}
         >
-          {icon ? <span aria-hidden>{icon}</span> : null}
+          {icon ? <span aria-hidden className="text-base md:text-lg">{icon}</span> : null}
           <span>{label}</span>
         </button>
       ))}
