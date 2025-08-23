@@ -24,6 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Derive environment for project pages
+        run: |
+          echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+          if [ -n "${{ vars.SITE_URL }}" ]; then echo "NEXT_PUBLIC_SITE_URL=${{ vars.SITE_URL }}" >> $GITHUB_ENV; fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -38,6 +44,7 @@ jobs:
           echo "window.__ENV__ = {" >> public/env.js
           if [ -n "${{ secrets.FORMSPREE_ACTION_URL }}" ]; then echo "  NEXT_PUBLIC_FORMSPREE_ACTION_URL: '${{ secrets.FORMSPREE_ACTION_URL }}'," >> public/env.js; fi
           if [ -n "${{ vars.SITE_URL }}" ]; then echo "  NEXT_PUBLIC_SITE_URL: '${{ vars.SITE_URL }}'" >> public/env.js; fi
+          if [ -n "$NEXT_PUBLIC_BASE_PATH" ]; then echo "  NEXT_PUBLIC_BASE_PATH: '$NEXT_PUBLIC_BASE_PATH'" >> public/env.js; fi
           echo "};" >> public/env.js
 
       - name: Build
