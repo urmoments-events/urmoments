@@ -3,6 +3,7 @@ name: Deploy Next.js static site to GitHub Pages
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,28 +31,25 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: next
 
       - name: Create env.js from GH Pages environment vars
         run: |
-          : > next/public/env.js
-          echo "window.__ENV__ = {" >> next/public/env.js
-          if [ -n "${{ secrets.FORMSPREE_ACTION_URL }}" ]; then echo "  NEXT_PUBLIC_FORMSPREE_ACTION_URL: '${{ secrets.FORMSPREE_ACTION_URL }}'," >> next/public/env.js; fi
-          if [ -n "${{ vars.SITE_URL }}" ]; then echo "  NEXT_PUBLIC_SITE_URL: '${{ vars.SITE_URL }}'" >> next/public/env.js; fi
-          echo "};" >> next/public/env.js
+          : > public/env.js
+          echo "window.__ENV__ = {" >> public/env.js
+          if [ -n "${{ secrets.FORMSPREE_ACTION_URL }}" ]; then echo "  NEXT_PUBLIC_FORMSPREE_ACTION_URL: '${{ secrets.FORMSPREE_ACTION_URL }}'," >> public/env.js; fi
+          if [ -n "${{ vars.SITE_URL }}" ]; then echo "  NEXT_PUBLIC_SITE_URL: '${{ vars.SITE_URL }}'" >> public/env.js; fi
+          echo "};" >> public/env.js
 
       - name: Build
         run: npm run build
-        working-directory: next
 
       - name: Export static site
         run: npm run export
-        working-directory: next
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: next/out
+          path: out
 
       - name: Deploy to GitHub Pages
         id: deployment
