@@ -12,7 +12,7 @@ export default function ContactForm({
   action?: string;
   consentText?: string;
   placeholders?: Placeholders;
-  page?: "home" | "services";
+  page?: "home" | "services" | "service-detail";
 }) {
   const [status, setStatus] = useState<string>("");
   const effectiveAction = (process.env.NEXT_PUBLIC_FORMSPREE_ACTION_URL as string | undefined) || action || "";

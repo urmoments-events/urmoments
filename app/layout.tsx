@@ -59,6 +59,28 @@ export default function RootLayout({
             <Script id="jsonld-localbusiness" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
           );
         })()}
+        
+        {/* JSON-LD FAQPage */}
+        {(() => {
+          const cfg = loadConfig();
+          if (!cfg.faq || cfg.faq.length === 0) return null;
+          
+          const faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: cfg.faq.map(({ q, a }) => ({
+              "@type": "Question",
+              name: q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: a,
+              },
+            })),
+          };
+          return (
+            <Script id="jsonld-faqpage" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+          );
+        })()}
       </head>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>

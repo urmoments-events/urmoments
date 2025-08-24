@@ -19,6 +19,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           <nav className="hidden md:flex items-center gap-2" aria-label="Primary">
             <Link href="/" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">Home</Link>
             <Link href="/services" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">Services</Link>
+            <Link href="/gallery" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">Gallery</Link>
             <Link href="/#contact" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">Contact</Link>
           </nav>
           <button aria-controls="mnav" aria-expanded={open} onClick={() => setOpen(true)} className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
@@ -37,6 +38,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <div className="overflow-hidden rounded-xl ring-1 ring-slate-200 bg-white divide-y divide-slate-200">
                 <Link href="/" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>Home</Link>
                 <Link href="/services" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>Services</Link>
+                <Link href="/gallery" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>Gallery</Link>
                 <Link href="/#contact" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>Contact</Link>
               </div>
             </nav>
