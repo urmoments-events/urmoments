@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+import { isFeatureEnabled } from "@/lib/features";
 
 type Placeholders = Partial<Record<"fullName"|"email"|"postcode"|"description", string>>;
 
@@ -87,6 +89,13 @@ export default function ContactForm({
           <p className="mt-2 text-sm text-slate-600">We’ll never share your information. You can opt out at any time.</p>
           <div className="mt-2 text-sm" aria-live="polite">{status}</div>
         </form>
+                 {isFeatureEnabled('MULTI_STEP_FORM') && (
+           <div className="mt-4 text-center">
+             <Link href="/quote" className="text-rose-600 hover:text-rose-500 text-sm">
+               Prefer a step-by-step form? Try our detailed quote form →
+             </Link>
+           </div>
+         )}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { loadConfig } from "@/lib/config";
+import { isFeatureEnabled } from "@/lib/features";
 import { toPublicSrc } from "@/lib/util";
 import Image from "next/image";
 import Link from "next/link";
@@ -156,7 +157,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         page="service-detail"
       />
       
-      <FloatingCta phone={phone} instagram={socialLinks?.instagram} />
+      {isFeatureEnabled('FLOATING_CTA') && <FloatingCta phone={phone} instagram={socialLinks?.instagram} />}
       
       {/* Schema.org Product markup */}
       <script

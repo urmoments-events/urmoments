@@ -1,17 +1,28 @@
 "use client";
 
 import { useMemo } from "react";
+import { isFeatureEnabled } from "@/lib/features";
 
 export default function FloatingCta({ phone, instagram }: { phone?: string; instagram?: string }) {
   const numeric = useMemo(() => (phone ?? "").replace(/\D/g, ""), [phone]);
   if (!numeric && !instagram) return null;
   const waHref = numeric ? `https://wa.me/${numeric}?text=${encodeURIComponent("Hi! I'd like a quote for decorations.")}` : undefined;
+  
+  const trackCTA = (type: string) => {
+    if (typeof window !== 'undefined' && isFeatureEnabled('ANALYTICS')) {
+      const plausible = (window as Window & { plausible?: (event: string, options?: { props?: Record<string, string> }) => void }).plausible;
+      if (plausible) {
+        plausible('CTA Click', { props: { type } });
+      }
+    }
+  };
   return (
     <div className="fixed right-4 bottom-4 z-40 flex flex-col gap-3 md:right-6 md:bottom-6">
       {waHref ? (
         <a
           href={waHref}
           aria-label="Chat on WhatsApp"
+          onClick={() => trackCTA('whatsapp')}
           className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-green-500 text-white shadow-lg ring-1 ring-black/5 hover:bg-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden>
@@ -24,6 +35,7 @@ export default function FloatingCta({ phone, instagram }: { phone?: string; inst
           href={instagram}
           aria-label="View our Instagram"
           target="_blank" rel="noopener noreferrer"
+          onClick={() => trackCTA('instagram')}
           className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-gradient-to-br from-fuchsia-500 via-rose-500 to-amber-400 text-white shadow-lg ring-1 ring-black/5 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden>

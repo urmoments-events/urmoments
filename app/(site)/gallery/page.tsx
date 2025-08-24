@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { loadConfig } from "@/lib/config";
+import { isFeatureEnabled } from "@/lib/features";
 import GalleryClient from "@/components/GalleryClient";
 import FloatingCta from "@/components/FloatingCta";
 
@@ -43,22 +44,24 @@ export default function GalleryPage() {
       </section>
 
       {/* Category Filters */}
-      <section className="bg-white border-b border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                data-category={category.id}
-                className="category-filter inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 active:scale-[0.98]"
-              >
-                <span aria-hidden>{category.icon}</span>
-                {category.label}
-              </button>
-            ))}
+      {isFeatureEnabled('GALLERY_FILTERS') && (
+        <section className="bg-white border-b border-slate-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  data-category={category.id}
+                  className="category-filter inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 active:scale-[0.98]"
+                >
+                  <span aria-hidden>{category.icon}</span>
+                  {category.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Gallery Grid */}
       <section className="bg-white">
@@ -93,7 +96,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <FloatingCta phone={phone} instagram={socialLinks?.instagram} />
+      {isFeatureEnabled('FLOATING_CTA') && <FloatingCta phone={phone} instagram={socialLinks?.instagram} />}
     </main>
   );
 }
