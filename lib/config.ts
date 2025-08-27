@@ -13,7 +13,25 @@ export type SiteConfig = {
   tagline?: string;
   email?: string;
   phone?: string;
-  address?: string;
+  address?: {
+    line1: string;
+    line2?: string;
+    line3?: string;
+    city: string;
+    postcode: string;
+    country: string;
+  };
+  businessDetails?: {
+    registrationNumber: string;
+    businessType: string;
+    tradingSince: string;
+    industry: string;
+    vatNumber?: string;
+  };
+  ownerDetails?: {
+    name: string;
+    position: string;
+  };
   socialLinks?: SocialLinks;
   heroBanner?: HeroBanner;
   heroImages?: string[];

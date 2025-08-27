@@ -1,6 +1,6 @@
-# UrMoments — Marketing Website (Next.js + Tailwind + Static Export)
+# urmoments — Marketing Website (Next.js + Tailwind + Static Export)
 
-This repository contains the UrMoments marketing site, implemented with Next.js (App Router) and Tailwind CSS, exported to static HTML for hosting on GitHub Pages.
+This repository contains the urmoments marketing site, implemented with Next.js (App Router) and Tailwind CSS, exported to static HTML for hosting on GitHub Pages.
 
 ## Tech Stack
 - Next.js (App Router, SSG only, output: export)
@@ -39,7 +39,7 @@ This repository contains the UrMoments marketing site, implemented with Next.js 
 ## config.json (schema)
 ```jsonc
 {
-  "brandName": "UrMoments",
+  "brandName": "urmoments",
   "tagline": "Your moments, our promise.",
   "email": "hello@urmoments.co.uk",
   "phone": "+447000000000",
@@ -77,8 +77,8 @@ This repository contains the UrMoments marketing site, implemented with Next.js 
     }
   },
   "seo": {
-    "title": "UrMoments - Birthday Decorations in London | Your moments, our promise.",
-    "description": "UrMoments creates stylish, stress-free birthday decorations in London…",
+    "title": "urmoments - Birthday Decorations in London | Your moments, our promise.",
+    "description": "urmoments creates stylish, stress-free birthday decorations in London…",
     "keywords": "birthday decorations London, balloons, backdrops, event styling",
     "image": "/assets/og-cover.svg",
     "url": "" // can be left empty; injected via env at deploy
@@ -153,4 +153,4 @@ Notes for Project Pages (username.github.io/repo):
 - Validate `config.json` updates with a minimal manual check before pushing.
 
 ## License
-Proprietary. © UrMoments.
+Proprietary. © urmoments.

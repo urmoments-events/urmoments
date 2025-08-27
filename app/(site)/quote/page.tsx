@@ -4,10 +4,10 @@ import MultiStepContactForm from "@/components/MultiStepContactForm";
 import FloatingCta from "@/components/FloatingCta";
 
 export const metadata: Metadata = {
-  title: "Get a Quote - UrMoments | Event Decorations in London",
+  title: "Get a Quote - urmoments | Event Decorations in London",
   description: "Get a personalized quote for your event decorations in London. Tell us about your event in 3 simple steps and we'll get back to you within 24 hours.",
   openGraph: {
-    title: "Get a Quote - UrMoments | Event Decorations in London",
+    title: "Get a Quote - urmoments | Event Decorations in London",
     description: "Get a personalized quote for your event decorations in London.",
     type: "website",
   },

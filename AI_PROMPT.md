@@ -1,12 +1,12 @@
-# UrMoments Website - AI Prompt / Design Specification
+# urmoments Website - AI Prompt / Design Specification
 
-This file contains the **design requirements** for generating the UrMoments marketing website.  
+This file contains the **design requirements** for generating the urmoments marketing website.  
 The AI agent should follow these instructions when creating the HTML, CSS (Tailwind), and JS files.
 
 ---
 
 ## 🏷 Brand
-- **Name:** UrMoments  
+- **Name:** urmoments  
 - **Tagline:** *Your moments, our promise.*  
 - **Tone:** Warm, trustworthy, family-centric.  
 - **Colors (Tailwind):**
@@ -31,7 +31,7 @@ The AI agent should follow these instructions when creating the HTML, CSS (Tailw
 ---
 
 ## 🖥 Global UI
-- Sticky header with logo wordmark **UrMoments** and nav links: Home, Services, Contact  
+- Sticky header with logo wordmark **urmoments** and nav links: Home, Services, Contact  
 - Mobile navigation: hamburger → slide-over menu  
 - Footer:
   - Mini nav  
@@ -84,7 +84,7 @@ Submit:
 ### Packages (cards)
 - **Basic** - Balloon garland, backdrop stand, signage. *From £249*  
 - **Premium** - Larger backdrop, themed props, table styling. *From £449*  
-- **Deluxe** - Feature wall, ceiling décor, custom signage. *From £799*  
+- **Deluxe** - Feature wall, ceiling decor, custom signage. *From £799*  
 - Each card: bullet list + “Enquire” button → scroll to Contact form  
 
 ### Add-ons Section
@@ -121,15 +121,15 @@ Submit:
 
 ## 🔍 SEO & Meta
 - `<title>`:
-  - Home: “UrMoments - Birthday Decorations in London | Your moments, our promise.”  
-  - Services: “UrMoments Services - Packages & Add-ons”  
+  - Home: “urmoments - Birthday Decorations in London | Your moments, our promise.”  
+  - Services: “urmoments Services - Packages & Add-ons”  
 - Meta description (Home):  
-  “UrMoments creates stylish, stress-free birthday decorations in London. Theme packages, set-up & clean-up, optional add-ons like photography and cake. Get a fast quote.”  
+  “urmoments creates stylish, stress-free birthday decorations in London. Theme packages, set-up & clean-up, optional add-ons like photography and cake. Get a fast quote.”  
 - Open Graph & Twitter meta using `/assets/og-cover.jpg`  
 - JSON-LD schema: `LocalBusiness` with:
-  - name: UrMoments  
+  - name: urmoments  
   - area served: London  
-  - email: hello@UrMoments.co.uk  
+  - email: hello@urmoments.co.uk  
   - telephone: placeholder  
 
 ---

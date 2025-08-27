@@ -6,10 +6,10 @@ import GalleryClient from "@/components/GalleryClient";
 import FloatingCta from "@/components/FloatingCta";
 
 export const metadata: Metadata = {
-  title: "Gallery - UrMoments | Event Decorations in London",
+  title: "Gallery - urmoments | Event Decorations in London",
   description: "Browse our gallery of birthday decorations, gender reveals, and surprise party setups across London. See our latest work and get inspired for your event.",
   openGraph: {
-    title: "Gallery - UrMoments | Event Decorations in London",
+    title: "Gallery - urmoments | Event Decorations in London",
     description: "Browse our gallery of birthday decorations, gender reveals, and surprise party setups across London.",
     type: "website",
   },

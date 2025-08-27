@@ -1,6 +1,6 @@
 import { loadConfig } from "@/lib/config";
 import { isFeatureEnabled } from "@/lib/features";
-import { toPublicSrc } from "@/lib/util";
+import { getResponsiveImageProps } from "@/lib/util";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,9 +20,9 @@ export default function ServicesGrid() {
             <article key={svc.title} className="rounded-xl bg-white p-6 shadow ring-1 ring-slate-200 flex flex-col">
               {isFeatureEnabled('SERVICE_DETAIL_PAGES') ? (
                 <Link href={`/services/${getServiceSlug(svc.title)}`} className="group">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src={toPublicSrc(svc.image)} alt={svc.title} fill unoptimized sizes="(max-width: 768px) 100vw, 33vw" className="rounded-lg object-cover ring-1 ring-slate-200 group-hover:opacity-95 transition" />
-                  </div>
+                                     <div className="relative w-full aspect-[4/3]">
+                     <Image {...getResponsiveImageProps(svc.image, 'serviceCard', svc.title, "rounded-lg object-cover ring-1 ring-slate-200 group-hover:opacity-95 transition")} />
+                   </div>
                   <div className="mt-4 flex items-center">
                     <h3 className="text-lg font-semibold group-hover:text-rose-600 transition">{svc.title}</h3>
                     {svc.popular ? (
@@ -50,9 +50,9 @@ export default function ServicesGrid() {
                 </Link>
               ) : (
                 <div className="group">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src={toPublicSrc(svc.image)} alt={svc.title} fill unoptimized sizes="(max-width: 768px) 100vw, 33vw" className="rounded-lg object-cover ring-1 ring-slate-200" />
-                  </div>
+                                     <div className="relative w-full aspect-[4/3]">
+                     <Image {...getResponsiveImageProps(svc.image, 'serviceCard', svc.title, "rounded-lg object-cover ring-1 ring-slate-200")} />
+                   </div>
                   <div className="mt-4 flex items-center">
                     <h3 className="text-lg font-semibold">{svc.title}</h3>
                     {svc.popular ? (

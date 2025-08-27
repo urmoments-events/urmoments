@@ -1,24 +1,42 @@
 {
-  "brandName": "UrMoments",
+  "brandName": "urmoments events ltd",
   "tagline": "Your moments, our promise.",
-  "email": "hello@urmoments.co.uk",
-  "phone": "+447405036754",
-  "address": "London, UK",
+  "email": "urmoments.events@gmail.com",
+  "phone": "+44-7405036754",
+  "address": {
+    "line1": "Office 14173",
+    "line2": "182-184 High Street North",
+    "line3": "East Ham",
+    "city": "London", 
+    "postcode": "E6 2JA",
+    "country": "United Kingdom"
+  },
+  "businessDetails": {
+    "registrationNumber": "",
+    "businessType": "",
+    "tradingSince": "",
+    "industry": "Event Planning & Decorations",
+    "vatNumber": ""
+  },
+  "ownerDetails": {
+    "name": "Your Full Legal Name",
+    "position": "Owner & Founder"
+  },
   "socialLinks": {
     "instagram": "https://www.instagram.com/urmoments.events",
     "facebook": "",
     "whatsapp": "https://wa.me/447405036754"
   },
   "heroImages": [
-    "assets/home/image1.jpg",
-    "assets/home/image2.jpg",
-    "assets/home/image3.jpeg",
-    "assets/home/image4.jpg",
-    "assets/home/image5.jpg",
-    "assets/home/image6.jpg"
+    "home/image1.jpg",
+    "home/image2.jpg",
+    "home/image3.jpeg",
+    "home/image4.jpg",
+    "home/image5.jpg",
+    "home/image6.jpg"
   ],
   "heroBanner": {
-    "image": "assets/home/image1.jpg",
+    "image": "home/image1.jpg",
     "headline": "Beautiful, stress-free party decorations",
     "subhead": "Birthdays, baby showers, and more across London",
     "points": ["Theme styling", "Set-up & clean-up", "On-time guarantee"]
@@ -27,7 +45,7 @@
     {
       "title": "Birthday Decorations",
       "description": "Theme-based styling with balloons, backdrop, and signage.",
-      "image": "assets/services/image1.jpg",
+      "image": "services/image1.jpg",
       "price": "Contact Us",
       "popular": true,
       "features": [
@@ -40,7 +58,7 @@
     {
       "title": "Gender Reveal Decorations",
       "description": "Elegant reveal moments with props and table styling.",
-      "image": "assets/services/image2.jpg",
+      "image": "services/image2.jpg",
       "price": "Contact Us",
       "features": [
         "Reveal props & backdrop",
@@ -51,15 +69,15 @@
     },
     {
       "title": "Surprise Party Decorations",
-      "description": "Statement feature wall with ceiling décor and custom signage.",
-      "image": "assets/services/image3.jpg",
+      "description": "Statement feature wall with ceiling decor and custom signage.",
+      "image": "services/image3.jpg",
       "price": "Contact Us",
       "features": [
         "Feature wall",
-        "Ceiling décor",
+        "Ceiling decor",
         "Custom signage"
       ],
-      "tags": ["Feature wall", "Ceiling décor"]
+      "tags": ["Feature wall", "Ceiling decor"]
     }
   ],
   "addOns": [
@@ -81,36 +99,40 @@
       "area": "Wembley",
       "text": "On time, super friendly, and the backdrop looked stunning in photos.",
       "avatar": ""
-    },
-    {
-      "name": "Anita K.",
-      "area": "Ilford",
-      "text": "Great value and zero stress. We just arrived and enjoyed the party!",
-      "avatar": ""
-    },
-    {
-      "name": "Anita M.",
-      "area": "EastHam",
-      "text": "Great value and zero stress. We just arrived and enjoyed the party!",
-      "avatar": ""
     }
   ],
   "faq": [
     {
       "q": "How far in advance should I book?",
-      "a": "2-4 weeks is ideal, but we often handle last-minute requests depending on availability."
-    },
-    {
-      "q": "Do you cover set-up and clean-up?",
-      "a": "Yes. Both are included in every package, with typical set-up time between 60-120 minutes."
-    },
-    {
-      "q": "Which areas do you serve?",
-      "a": "Greater London and nearby areas. Share your postcode and we’ll confirm logistics."
+      "a": "1-2 weeks is ideal, but we often handle last-minute requests depending on availability."
     },
     {
       "q": "Can you work with my theme and venue?",
-      "a": "Absolutely. We tailor colours and props to your theme and the venue’s layout."
+      "a": "Absolutely! We tailor colours and props to your theme and the venue’s layout."
+    },
+    {
+      "q" : "Do you offer photography services?",
+      "a" : "Yes, we offer photography services. We have a team of professional photographers who will capture your event and provide you with high-quality photos."
+    },
+    {
+      "q" : "Do you also take care of cake?",
+      "a" : "Yes, we can arrange a cake on your behalf. We will provide you with a range of options to choose from. You can customise cake to your theme and venue."
+    },
+    {
+      "q" : "Do you also offer catering service?",
+      "a" : "we will launch this service soon. Stay tuned!"
+    },
+    {
+      "q": "Do you cover set-up and clean-up?",
+      "a": "Yes, both are included in every package, with typical set-up time between 60-120 minutes."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "Greater London and nearby areas. Share your postcode and we’ll confirm logistics. More areas coming soon!"
+    },
+    {
+      "q": "What is your cancellation policy?",
+      "a": "We require 24 hours notice for cancellations. If cancelled within 24 hours, 50% of the total cost will be charged."
     }
   ],
   "contactForm": {
@@ -130,9 +152,9 @@
     ]
   },
   "seo": {
-    "title": "UrMoments - Birthday Decorations in London | Your moments, our promise.",
-    "description": "UrMoments creates stylish, stress-free birthday decorations in London. Theme packages, set-up & clean-up, optional add-ons like photography and cake. Get a fast quote.",
-    "keywords": "birthday decorations London, balloons, backdrops, event styling",
+    "title": "urmoments - Birthday Decorations in London | Your moments, our promise.",
+    "description": "urmoments creates stylish, stress-free birthday decorations in London and nearby areas. Theme packages, set-up & clean-up, optional add-ons like photography and cake. Get a fast quote.",
+    "keywords": "birthday decorations, gender reveal decorations, surprise party decorations, festive decorations, balloons, backdrops, event styling, photography, cake, catering, venue sourcing, return gifts",
     "image": "/assets/og-cover.svg",
     "url": ""
   }

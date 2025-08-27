@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { isFeatureEnabled } from "@/lib/features";
 
 type Step = "details" | "addons" | "contact";
@@ -358,6 +359,25 @@ export default function MultiStepContactForm({
                 />
                 <label htmlFor="consent" className="text-sm text-slate-700">
                   {contactForm?.consentText || "I agree to be contacted about my enquiry."}
+                </label>
+              </div>
+              <div className="flex items-start gap-3">
+                <input
+                  id="terms"
+                  name="terms"
+                  type="checkbox"
+                  required
+                  className="mt-1 h-5 w-5 rounded border-slate-300 text-rose-600 focus:ring-rose-500"
+                />
+                <label htmlFor="terms" className="text-sm text-slate-700">
+                  I accept the{" "}
+                  <Link href="/terms" className="text-rose-600 hover:text-rose-500 underline" target="_blank">
+                    Terms & Conditions
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/privacy" className="text-rose-600 hover:text-rose-500 underline" target="_blank">
+                    Privacy Policy
+                  </Link>
                 </label>
               </div>
             </div>

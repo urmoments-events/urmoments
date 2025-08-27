@@ -178,7 +178,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             category: "Event Decorations",
             brand: {
               "@type": "Brand",
-              name: "UrMoments",
+              name: "urmoments",
             },
           }),
         }}

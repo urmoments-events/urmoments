@@ -4,14 +4,15 @@ import { loadConfig } from "@/lib/config";
 import { isFeatureEnabled } from "@/lib/features";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function generateMetadata(): Metadata {
   const cfg = loadConfig();
   const seo = cfg.seo || {};
-  const title = seo.title || "UrMoments - Birthday Decorations in London | Your moments, our promise.";
-  const description = seo.description || "UrMoments creates stylish, stress-free birthday decorations in London.";
+  const title = seo.title || "urmoments - Birthday Decorations in London | Your moments, our promise.";
+  const description = seo.description || "urmoments creates stylish, stress-free birthday decorations in London.";
   const image = seo.image || "/assets/og-cover.svg";
   const url = (seo.url || process.env.NEXT_PUBLIC_SITE_URL) as string | undefined;
   return {
@@ -95,10 +96,10 @@ export default function RootLayout({
         {/* PWA Meta Tags */}
         {isFeatureEnabled('PWA') && (
           <>
-            <meta name="application-name" content="UrMoments" />
+            <meta name="application-name" content="urmoments" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-            <meta name="apple-mobile-web-app-title" content="UrMoments" />
+            <meta name="apple-mobile-web-app-title" content="urmoments" />
             <meta name="description" content="Professional event decorations and party setup services across London" />
             <meta name="format-detection" content="telephone=no" />
             <meta name="mobile-web-app-capable" content="yes" />
@@ -118,18 +119,21 @@ export default function RootLayout({
         
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content={process.env.NEXT_PUBLIC_SITE_URL} />
-        <meta name="twitter:title" content="UrMoments - Event Decorations" />
+        <meta name="twitter:title" content="urmoments - Event Decorations" />
         <meta name="twitter:description" content="Professional event decorations and party setup services across London" />
         <meta name="twitter:image" content="/icons/icon-192x192.png" />
         <meta name="twitter:creator" content="@urmoments" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="UrMoments - Event Decorations" />
+        <meta property="og:title" content="urmoments - Event Decorations" />
         <meta property="og:description" content="Professional event decorations and party setup services across London" />
-        <meta property="og:site_name" content="UrMoments" />
+        <meta property="og:site_name" content="urmoments" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL} />
         <meta property="og:image" content="/icons/icon-192x192.png" />
       </head>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

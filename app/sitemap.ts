@@ -13,11 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
     : [];
   
-  const urls = [
-    { url: `${base}/`, lastModified: new Date() },
-    { url: `${base}/services/`, lastModified: new Date() },
-    { url: `${base}/gallery/`, lastModified: new Date() },
-  ];
+                const urls = [
+                { url: `${base}/`, lastModified: new Date() },
+                { url: `${base}/services/`, lastModified: new Date() },
+                { url: `${base}/gallery/`, lastModified: new Date() },
+                { url: `${base}/about/`, lastModified: new Date() },
+                { url: `${base}/terms/`, lastModified: new Date() },
+                { url: `${base}/privacy/`, lastModified: new Date() },
+              ];
   
   // Only include quote page if multi-step form is enabled
   if (isFeatureEnabled('MULTI_STEP_FORM')) {
