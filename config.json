@@ -2,13 +2,13 @@
   "brandName": "urmoments events ltd",
   "tagline": "Your moments, our promise.",
   "email": "urmoments.events@gmail.com",
-  "phone": "+44-7405036754",
+  "phone": "+44-1234567890",
   "address": {
-    "line1": "Office 14173",
-    "line2": "182-184 High Street North",
+    "line1": "Dorset Road",
+    "line2": "High Street North",
     "line3": "East Ham",
     "city": "London", 
-    "postcode": "E6 2JA",
+    "postcode": "E7 8PS",
     "country": "United Kingdom"
   },
   "businessDetails": {
@@ -25,7 +25,7 @@
   "socialLinks": {
     "instagram": "https://www.instagram.com/urmoments.events",
     "facebook": "",
-    "whatsapp": "https://wa.me/447405036754"
+    "whatsapp": ""
   },
   "heroImages": [
     "home/image1.jpg",

@@ -32,6 +32,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <Link href="/gallery" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
               Gallery
             </Link>
+            <Link href="/about" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
+              About Us
+            </Link>
             {isFeatureEnabled('MULTI_STEP_FORM') && (
               <Link href="/quote" className="px-3 py-2 rounded-md text-slate-700 hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
                 Get Quote
@@ -77,6 +80,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                 </Link>
                 <Link href="/gallery" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>
                   Gallery
+                </Link>
+                <Link href="/about" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>
+                  About Us
                 </Link>
                 {isFeatureEnabled('MULTI_STEP_FORM') && (
                   <Link href="/quote" className="block px-4 py-5 text-slate-900 text-lg font-medium hover:bg-slate-50" onClick={() => setOpen(false)}>
